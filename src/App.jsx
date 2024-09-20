@@ -23,33 +23,56 @@ function App() {
   const handleFullNameChange = (event) => {
     // console.log(event.target.value)
     // let value = event.target.value
-    setFullNameValue(event.target.value)
-  }
+    setFullNameValue(event.target.value);
+  };
 
   const handleProfileImageChange = (event) => {
-    setProfileImageValue(event.target.value)
-  }
+    setProfileImageValue(event.target.value);
+  };
 
   const handlePhoneValueChange = (event) => {
-    setPhoneValue(event.target.value)
-  }
+    setPhoneValue(event.target.value);
+  };
 
   const handleEmailValueChange = (event) => {
-    setEmailValue(event.target.value)
-  }
+    setEmailValue(event.target.value);
+  };
 
   const handleProgramChange = (event) => {
-    setProgramValue(event.target.value)
-  }
+    setProgramValue(event.target.value);
+  };
 
   const handleGraduationYearChange = (event) => {
-    setGraduationYear(event.target.value)
-  }
+    setGraduationYearValue(event.target.value);
+  };
 
   const handleGraduatedChange = (event) => {
-    setGraduatedValue(event.target.value)
-  }
+    setGraduatedValue(event.target.value);
+  };
 
+
+  // handleFormSubmit starts here
+  const handleFormSubmit = (event) => {
+    // avoid default settings and refreshing 
+    event.preventDefault()
+
+    // new student object to create on submit folowing json
+    const newStudent = {
+      fullName: fullNameValue,
+      email: emailValue,
+      phone: phoneValue,
+      program: programValue,
+      image: profileImageValue,
+      graduationYear: graduationYearValue,
+      graduated: graduatedValue,
+    }
+    
+    // updates the student list adding the new on
+    setStudents((prevStudents) => [...prevStudents, newStudent])
+
+    // clear form inputs missing here * * * * * * *
+
+  }
 
 
   return (
@@ -57,7 +80,8 @@ function App() {
       <Navbar />
 
       {/* FORM */}
-      <form>
+      <form onSubmit={handleFormSubmit}>
+        
         <span>Add a Student</span>
         <div>
           <label>
@@ -94,7 +118,7 @@ function App() {
 
           <label>
             Graduation Year
-            <input onChange={handleGraduatedChange} 
+            <input onChange={handleGraduationYearChange} 
               name="graduationYear"
               type="number"
               placeholder="Graduation Year"
