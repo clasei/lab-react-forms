@@ -62,22 +62,22 @@ function App() {
         <div>
           <label>
             Full Name
-            <input onChange={handleFullNameChange} name="fullName" type="text" placeholder="Full Name" value={fullNameValue} />
+            <input onChange={handleFullNameChange} name="fullName" type="text" placeholder="Ada Lovelace" value={fullNameValue} />
           </label>
 
           <label>
             Profile Image
-            <input onChange={handleProfileImageChange} name="image" type="url" placeholder="Profile Image" value={profileImageValue} />
+            <input onChange={handleProfileImageChange} name="image" type="url" placeholder="Cats" value={profileImageValue} />
           </label>
 
           <label>
             Phone
-            <input onChange={handlePhoneValueChange} name="phone" type="tel" placeholder="Phone" value={phoneValue} />
+            <input onChange={handlePhoneValueChange} name="phone" type="tel" placeholder="Better Write" value={phoneValue} />
           </label>
 
           <label>
             Email
-            <input onChange={handleEmailValueChange} name="email" type="email" placeholder="Email" value={emailValue} />
+            <input onChange={handleEmailValueChange} name="email" type="email" placeholder="Are You Serious" value={emailValue} />
           </label>
         </div>
 
