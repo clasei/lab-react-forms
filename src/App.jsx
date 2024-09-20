@@ -6,20 +6,17 @@ import TableHeader from "./components/TableHeader";
 import StudentCard from "./components/StudentCard";
 import AddStudent from "./components/AddStudent";
 
-
 function App() {
-
   // state created to handle changes and update students
-  const [students, setStudents] = useState(studentsData)
+  const [students, setStudents] = useState(studentsData);
 
   // function created to add new students
   const handleAddStudent = (newStudent) => {
     // adds the new student; prevStudents used to provide the latest studentsData state
-    setStudents((prevStudents) => [...prevStudents, newStudent])
-  }
+    setStudents((prevStudents) => [...prevStudents, newStudent]);
+  };
 
-    
-/* REFACTORING ALL INPUT FUNCTIONS TO USE ONLY ONE !!! IN AddStudent.jsx
+  /* REFACTORING ALL INPUT FUNCTIONS TO USE ONLY ONE !!! IN AddStudent.jsx
 
   const handleFullNameChange = (event) => {
     // console.log(event.target.value)
@@ -52,15 +49,13 @@ function App() {
   };
 
 */
- 
 
   return (
     <div className="App pt-20">
-
       <Navbar />
 
       {/* ********* ADD STUDENT FORM RENDERED HERE ********* */}
-      <AddStudent handleAddStudent={handleAddStudent}/>
+      <AddStudent handleAddStudent={handleAddStudent} />
 
       {/* TABLE/LIST HEADER */}
       <TableHeader />
@@ -70,11 +65,8 @@ function App() {
         students.map((student) => {
           return <StudentCard key={student.email} {...student} />;
         })}
-
     </div>
-  )
-
+  );
 }
-
 
 export default App;
